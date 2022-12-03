@@ -57,8 +57,12 @@ function game(){
      const playerSelection = prompt("Start the game by picking among 'Rock, Paper, Scissors'").toLowerCase();
         if (playerSelection !== 'rock' &&
                 playerSelection !== 'paper' && 
-                playerSelection !== 'scissors') {
+                playerSelection !== 'scissors') 
+                {
                     const invalidChoice = alert("Invalid Choice");
+                    playerScore = 0;
+                    computerScore = 0;
+                    console.log(game())
              }
              console.log (computerSelection);
              console.log(playRound(playerSelection, computerSelection));
