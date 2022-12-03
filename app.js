@@ -14,4 +14,9 @@ switch(randomChoice) {
 const computerSelection = getComputerChoice(0, 2)
 console.log (computerSelection);
 
-
+const playerSelection = prompt("You start the game, pick 'Rock, Paper or Scissors'").toLowerCase();
+if (playerSelection !== 'rock' &&
+     playerSelection !== 'paper' && 
+     playerSelection !== 'scissors') {
+    const invalidChoice = prompt("Invalid Choice - You start the game, pick 'Rock, Paper or Scissors'").toLowerCase();
+}
