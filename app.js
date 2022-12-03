@@ -26,14 +26,31 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
-const computerSelection = getComputerChoice(0, 2)
-console.log (computerSelection);
-const playerSelection = prompt("Start the game by picking among 'Rock, Paper, Scissors'").toLowerCase();
-if (playerSelection !== 'rock' &&
-     playerSelection !== 'paper' && 
-     playerSelection !== 'scissors') {
-     const invalidChoice = alert("Invalid Choice")
-     }
 
-console.log(playRound(playerSelection, computerSelection))
+
+function game(){
+    //play 5 rounds of the game 
+    for (let i = 0; i < 5; i++) {
+     const computerSelection = getComputerChoice(0, 2)
+     const playerSelection = prompt("Start the game by picking among 'Rock, Paper, Scissors'").toLowerCase();
+        if (playerSelection !== 'rock' &&
+                playerSelection !== 'paper' && 
+                playerSelection !== 'scissors') {
+                    const invalidChoice = alert("Invalid Choice");
+             }
+    console.log (computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+
+
+game()
+
+
+
+
+
+
+
      
