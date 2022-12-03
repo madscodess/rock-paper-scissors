@@ -1,4 +1,8 @@
 
+let playerScore = 0; 
+let computerScore = 0;
+let gameOver = false;
+
 
 function getComputerChoice(min, max) { // min and max included 
         const randomChoice = Math.floor(Math.random() * (max - min + 1) + min)
@@ -42,8 +46,6 @@ function game(){
     console.log(playRound(playerSelection, computerSelection));
     }
 }
-
-
 
 game()
 
