@@ -18,15 +18,33 @@ switch(randomChoice) {
 
 function playRound(playerSelection, computerSelection) {
    if (playerSelection === computerSelection) {
+    console.log(playerScore);
+    console.log(computerScore);
       return `It's a tie! you both picked ${playerSelection}`;
-   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-      return "You win! Rock beats Scissors";
-   } else if (playerSelection === "paper" && computerSelection === "rock") {
-      return "You win! Paper beats Rock";
-   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-      return "You win! Scissors beats Paper";
-   } else {
-      return `You lose! ${computerSelection} beats ${playerSelection}`;
+   } 
+   else if (playerSelection === "rock" && computerSelection === "scissors") {
+    playerScore++
+    console.log(playerScore);
+    console.log(computerScore);
+      return "You win this round! Rock beats Scissors";
+   } 
+   else if (playerSelection === "paper" && computerSelection === "rock") {
+    playerScore++
+    console.log(playerScore);
+    console.log(computerScore);
+      return "You win this round! Paper beats Rock";
+   } 
+   else if (playerSelection === "scissors" && computerSelection === "paper") {
+      playerScore++
+      console.log(playerScore);
+      console.log(computerScore);
+      return "You win this round! Scissors beats Paper"; 
+   } 
+   else {
+    computerScore++
+    console.log(playerScore);
+    console.log(computerScore);
+      return `You lose this round! ${computerSelection} beats ${playerSelection}`;
    }
 }
 
@@ -42,12 +60,30 @@ function game(){
                 playerSelection !== 'scissors') {
                     const invalidChoice = alert("Invalid Choice");
              }
-    console.log (computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-    }
-}
+             console.log (computerSelection);
+             console.log(playRound(playerSelection, computerSelection));
+            }
 
-game()
+             if (playerScore > computerScore) {
+                console.log(playerScore);
+                console.log(computerScore);
+                return "you beat the computer on this game"
+                
+            }
+            else if (playerScore < computerScore) {
+                console.log(playerScore);
+                console.log(computerScore);
+                return "computer won this game, you gotta get better!"
+                
+            }
+            else { 
+                console.log(playerScore);
+                console.log(computerScore);
+                return "you tied with the computer"
+            }
+    }
+
+console.log(game())
 
 
 
