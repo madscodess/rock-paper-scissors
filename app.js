@@ -1,7 +1,8 @@
 
 let playerScore = 0; 
 let computerScore = 0;
-let gameOver = false;
+
+const rockbutton = document.querySelector();
 
 
 function getComputerChoice(min, max) { // min and max included 
@@ -48,8 +49,6 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
-
-
 function game(){
     //play 5 rounds of the game 
     for (let i = 0; i < 5; i++) {
@@ -85,14 +84,7 @@ function game(){
                 console.log(computerScore);
                 return "you tied with the computer"
             }
+
     }
 
 console.log(game())
-
-
-
-
-
-
-
-     
