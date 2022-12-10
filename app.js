@@ -16,11 +16,11 @@ const outcomeDiv = document.querySelector('.outcome');
 const stopGameDiv = document.querySelector('.stopGame');
 
 const rockImage = document.getElementById('#rockImg')
-document.getElementById('rockImg').style.display = "none";
+
 const paperImage = document.getElementById('#paperImg')
-document.getElementById('paperImg').style.display = "none";
+
 const scissorsImage = document.getElementById('#scissorsImg')
-document.getElementById('scissorsImg').style.display = "none";
+
 
 
 const playerScoreSpan = document.querySelector('.player-score');
@@ -118,7 +118,7 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
-    document.getElementById('rockImg').style.display = "block";
+    document.getElementById('rockImg').style.display = "flex";
     document.getElementById('paperImg').style.display = "none";
     document.getElementById('scissorsImg').style.display = "none";
 });
@@ -131,7 +131,7 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
-    document.getElementById('paperImg').style.display = "block";
+    document.getElementById('paperImg').style.display = "flex";
     document.getElementById('rockImg').style.display = "none";
     document.getElementById('scissorsImg').style.display = "none";
 
@@ -146,7 +146,7 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
-    document.getElementById('scissorsImg').style.display = "block";
+    document.getElementById('scissorsImg').style.display = "flex";
     document.getElementById('rockImg').style.display = "none";
     document.getElementById('paperImg').style.display = "none";
 });
