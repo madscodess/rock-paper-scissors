@@ -15,17 +15,27 @@ const restartButton = document.querySelector('.restart');
 const outcomeDiv = document.querySelector('.outcome');
 const stopGameDiv = document.querySelector('.stopGame');
 
+const rockImage = document.getElementById('#rockImg')
+document.getElementById('rockImg').style.display = "none";
+const paperImage = document.getElementById('#paperImg')
+document.getElementById('paperImg').style.display = "none";
+const scissorsImage = document.getElementById('#scissorsImg')
+document.getElementById('scissorsImg').style.display = "none";
+
+
 const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
 
 const p = document.createElement('p');
 const h2 = document.createElement('h2');
 
+
+
 function getComputerChoice(min, max) { // min and max included 
         const randomChoice = Math.floor(Math.random() * (max - min + 1) + min)
 switch(randomChoice) {
     case 0:
-        return 'rock';
+        return 'rock';   
     case 1:
         return 'paper';
     case 2:
@@ -98,6 +108,8 @@ function reloadGame() {
     location.reload(); //reloads the page
 }
 
+
+
  //rock button functionality
 rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
@@ -106,6 +118,9 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
+    document.getElementById('rockImg').style.display = "block";
+    document.getElementById('paperImg').style.display = "none";
+    document.getElementById('scissorsImg').style.display = "none";
 });
 
  //paper button functionality
@@ -116,16 +131,24 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
+    document.getElementById('paperImg').style.display = "block";
+    document.getElementById('rockImg').style.display = "none";
+    document.getElementById('scissorsImg').style.display = "none";
+
  });
 
  //scissors button functionality
  scissorsButton.addEventListener('click', function() {
+   
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'scissors'
     playRound(playerSelection, computerSelection)
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
+    document.getElementById('scissorsImg').style.display = "block";
+    document.getElementById('rockImg').style.display = "none";
+    document.getElementById('paperImg').style.display = "none";
 });
 
 //restart game functionality
