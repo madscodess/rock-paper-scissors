@@ -5,6 +5,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Lato', sans-serif;
 }
 
 img {
@@ -29,6 +30,16 @@ img {
 }
 
 button {
-    margin-top: 1em;
+    width: 8rem;
+    height: 30px;
+    border-radius: 3rem;
+    border-color: black;
+    background-color: whitesmoke;
+    border: none;
+    margin-top: 2em;
     margin-left: 1rem;
+}
+
+button:hover {
+    background-color: grey;
 }

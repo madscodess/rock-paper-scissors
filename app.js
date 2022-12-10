@@ -118,9 +118,15 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
+    //display only rock image when clicked
     document.getElementById('rockImg').style.display = "flex";
     document.getElementById('paperImg').style.display = "none";
     document.getElementById('scissorsImg').style.display = "none";
+    //change color of buttons
+    rockButton.style.backgroundColor = 'salmon';
+    paperButton.style.backgroundColor = 'whitesmoke';
+    scissorsButton.style.backgroundColor = 'whitesmoke';
+
 });
 
  //paper button functionality
@@ -131,24 +137,34 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
+    //display only paper image when clicked
     document.getElementById('paperImg').style.display = "flex";
     document.getElementById('rockImg').style.display = "none";
     document.getElementById('scissorsImg').style.display = "none";
+    paperButton.style.backgroundColor = 'salmon';
+    //change color of buttons
+    paperButton.style.backgroundColor = 'salmon';
+    rockButton.style.backgroundColor = 'whitesmoke';
+    scissorsButton.style.backgroundColor = 'whitesmoke';
 
  });
 
  //scissors button functionality
  scissorsButton.addEventListener('click', function() {
-   
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'scissors'
     playRound(playerSelection, computerSelection)
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
     stopGame(playerScore, computerScore)
+    //display only scissors image when clicked
     document.getElementById('scissorsImg').style.display = "flex";
     document.getElementById('rockImg').style.display = "none";
     document.getElementById('paperImg').style.display = "none";
+     //change color of buttons
+     scissorsButton.style.backgroundColor = 'salmon';
+     paperButton.style.backgroundColor = 'whitesmoke';
+     rockButton.style.backgroundColor = 'whitesmoke';
 });
 
 //restart game functionality
