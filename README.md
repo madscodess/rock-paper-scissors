@@ -1,6 +1,6 @@
 # ROCK PAPER SCISSORS GAME
 
-[Live Project Link](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
+[Live Project Link](https://madscodess.github.io/rock-paper-scissors/)
 
 Created by Maddie
 
