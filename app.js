@@ -12,6 +12,7 @@ const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const restartButton = document.querySelector('.restart');
+const gameUpdateDiv = document.querySelector('.gameUpdate');
 const outcomeDiv = document.querySelector('.outcome');
 const stopGameDiv = document.querySelector('.stopGame');
 
@@ -25,7 +26,7 @@ const scissorsImage = document.getElementById('#scissorsImg')
 
 const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
-
+const updatePlay = document.createElement('p');
 const p = document.createElement('p');
 const h2 = document.createElement('h2');
 
@@ -50,25 +51,34 @@ function playRound(playerSelection, computerSelection) {
 } 
    else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++
-    p.innerText = "You win this round! Rock beats Scissors";
-    outcomeDiv.appendChild(p)
+    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    p.innerText = `You win this round! Rock beats Scissors`;
+    gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
+    outcomeDiv.appendChild(p) //update p text
 } 
    else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++
-    p.innerText = "You win this round! Paper beats Rock";
-    outcomeDiv.appendChild(p)
+    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    p.innerText = `You win this round! Paper beats Rock`;
+    gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
+    outcomeDiv.appendChild(p) //update p text
 } 
    else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++
-    p.innerText = "You win this round! Scissors beats Paper"; 
-    outcomeDiv.appendChild(p)
+    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    p.innerText = `You win this round! Scissors beats Paper`; 
+    gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
+    outcomeDiv.appendChild(p) //update p text
 } 
    else {
     computerScore++
+    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
     p.innerText = `You lose this round! ${computerSelection} beats ${playerSelection}`;
-    outcomeDiv.appendChild(p)
+    gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
+    outcomeDiv.appendChild(p) //update p text
 }
 }
+
 //check for who is the winner
 const checkForWinner = (playerScore, computerScore) => {
     if(playerScore === 5){
