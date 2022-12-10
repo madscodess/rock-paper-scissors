@@ -1,12 +1,15 @@
-
-let playerScore = 0; 
 let computerScore = 0;
+let playerScore = 0;
 
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const outcomeDiv = document.querySelector('.outcome');
-const p = document.createElement('p')
+
+const playerScoreSpan = document.querySelector('.player-score');
+const computerScoreSpan = document.querySelector('.computer-score');
+
+const p = document.createElement('p');
 
 function getComputerChoice(min, max) { // min and max included 
         const randomChoice = Math.floor(Math.random() * (max - min + 1) + min)
@@ -46,7 +49,7 @@ function playRound(playerSelection, computerSelection) {
     outcomeDiv.appendChild(p)
 }
 }
-
+//check for who is the winner
 const checkForWinner = (playerScore, computerScore) => {
     if(playerScore === 5){
         const h2 = document.createElement('h2')
@@ -62,11 +65,17 @@ const checkForWinner = (playerScore, computerScore) => {
 
 }
 
+//update the scores on screen
+const updateScores = (playerScore, computerScore) => {
+    playerScoreSpan.innerText = `Player Score:   ${playerScore}`
+    computerScoreSpan.innerText = `Computer Score:   ${computerScore}`
+
  //rock button functionality
 rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'rock'
     playRound(playerSelection, computerSelection)
+    updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
 });
 
@@ -75,6 +84,7 @@ rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'paper'
     playRound(playerSelection, computerSelection)
+    updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
  });
 
@@ -83,6 +93,7 @@ rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'scissors'
     playRound(playerSelection, computerSelection)
+    updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
 });
 
