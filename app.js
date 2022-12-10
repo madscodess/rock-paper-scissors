@@ -1,11 +1,9 @@
 //TODO: 
 // functionality for rock paper scissors pictures on selection of button
 
-//FIXME: none yet
-//fix bug to make player restart the game after player or computer has won
-
 //TODO: ADDED FUNCTIONALITY - completed
 // restart game button
+//player has to restart the game after 5 rounds
 
 let computerScore = 0;
 let playerScore = 0;
@@ -15,11 +13,13 @@ const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const restartButton = document.querySelector('.restart');
 const outcomeDiv = document.querySelector('.outcome');
+const stopGameDiv = document.querySelector('.stopGame');
 
 const playerScoreSpan = document.querySelector('.player-score');
 const computerScoreSpan = document.querySelector('.computer-score');
 
 const p = document.createElement('p');
+const h2 = document.createElement('h2');
 
 function getComputerChoice(min, max) { // min and max included 
         const randomChoice = Math.floor(Math.random() * (max - min + 1) + min)
@@ -72,6 +72,18 @@ const checkForWinner = (playerScore, computerScore) => {
         h2.innerText = `You lost ${playerScore} to ${computerScore}, try again!`
         outcomeDiv.appendChild(h2)
     }
+}
+
+//stop the game after 5 rounds functionality
+const stopGame = (playerScore, computerScore) => {
+    if(playerScore === 5 || computerScore === 5) {
+        const h2 = document.createElement('h2')
+        h2.innerText = `you have played 5 rounds, restart the game`
+        stopGameDiv.appendChild(h2)
+        document.querySelector('.rock').disabled = true;
+        document.querySelector('.paper').disabled = true;
+        document.querySelector('.scissors').disabled = true;
+    }
 
 }
 
@@ -93,6 +105,7 @@ rockButton.addEventListener('click', function() {
     playRound(playerSelection, computerSelection)
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
+    stopGame(playerScore, computerScore)
 });
 
  //paper button functionality
@@ -102,6 +115,7 @@ rockButton.addEventListener('click', function() {
     playRound(playerSelection, computerSelection)
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
+    stopGame(playerScore, computerScore)
  });
 
  //scissors button functionality
@@ -111,50 +125,10 @@ rockButton.addEventListener('click', function() {
     playRound(playerSelection, computerSelection)
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
+    stopGame(playerScore, computerScore)
 });
 
 //restart game functionality
 restartButton.addEventListener('click', function() {
     reloadGame();
 });
-
-
-// function game(){
-    //play 5 rounds of the game 
-    // for (let i = 0; i < 5; i++) {
-    //  const computerSelection = getComputerChoice(0, 2)
-    //  const playerSelection = prompt("Start the game by picking among 'Rock, Paper, Scissors'").toLowerCase();
-    //     if (playerSelection !== 'rock' &&
-    //             playerSelection !== 'paper' && 
-    //             playerSelection !== 'scissors') 
-    //             {
-    //                 const invalidChoice = alert("Invalid Choice");
-    //                 playerScore = 0;
-    //                 computerScore = 0;
-    //                 console.log(game())
-    //          }
-    //          console.log (computerSelection);
-    //          console.log(playRound(playerSelection, computerSelection));
-    //         }
-
-    //          if (playerScore > computerScore) {
-    //             console.log(playerScore);
-    //             console.log(computerScore);
-    //             return "you beat the computer on this game"
-                
-    //         }
-    //         else if (playerScore < computerScore) {
-    //            å console.log(playerScore);
-    //             console.log(computerScore);
-    //             return "computer won this game, you gotta get better!"
-                
-    //         }
-    //         else { 
-    //             console.log(playerScore);
-    //             console.log(computerScore);
-    //             return "you tied with the computer"
-    //         }
-
-    // }
-
-// console.log(game())
