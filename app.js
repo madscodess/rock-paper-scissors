@@ -1,10 +1,3 @@
-//TODO: 
-// functionality for rock paper scissors pictures on selection of button
-
-//TODO: ADDED FUNCTIONALITY - completed
-// restart game button
-//player has to restart the game after 5 rounds
-
 let computerScore = 0;
 let playerScore = 0;
 
@@ -12,14 +5,13 @@ const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const restartButton = document.querySelector('.restart');
+
 const gameUpdateDiv = document.querySelector('.gameUpdate');
 const outcomeDiv = document.querySelector('.outcome');
 const stopGameDiv = document.querySelector('.stopGame');
 
 const rockImage = document.getElementById('#rockImg')
-
 const paperImage = document.getElementById('#paperImg')
-
 const scissorsImage = document.getElementById('#scissorsImg')
 
 
@@ -104,7 +96,6 @@ const stopGame = (playerScore, computerScore) => {
         document.querySelector('.paper').disabled = true;
         document.querySelector('.scissors').disabled = true;
     }
-
 }
 
 //update the scores on screen
@@ -117,8 +108,6 @@ const updateScores = (playerScore, computerScore) => {
 function reloadGame() {
     location.reload(); //reloads the page
 }
-
-
 
  //rock button functionality
 rockButton.addEventListener('click', function() {
@@ -136,7 +125,6 @@ rockButton.addEventListener('click', function() {
     rockButton.style.backgroundColor = 'salmon';
     paperButton.style.backgroundColor = 'whitesmoke';
     scissorsButton.style.backgroundColor = 'whitesmoke';
-
 });
 
  //paper button functionality
