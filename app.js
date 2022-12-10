@@ -43,28 +43,28 @@ function playRound(playerSelection, computerSelection) {
 } 
    else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++
-    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    updatePlay.innerText = `Player: ${playerSelection} Computer: ${computerSelection}`
     p.innerText = `You win this round! Rock beats Scissors`;
     gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
     outcomeDiv.appendChild(p) //update p text
 } 
    else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++
-    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    updatePlay.innerText = `Player: ${playerSelection} Computer: ${computerSelection}`
     p.innerText = `You win this round! Paper beats Rock`;
     gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
     outcomeDiv.appendChild(p) //update p text
 } 
    else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++
-    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    updatePlay.innerText = `Player: ${playerSelection} Computer: ${computerSelection}`
     p.innerText = `You win this round! Scissors beats Paper`; 
     gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
     outcomeDiv.appendChild(p) //update p text
 } 
    else {
     computerScore++
-    updatePlay.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}`
+    updatePlay.innerText = `Player: ${playerSelection} Computer: ${computerSelection}`
     p.innerText = `You lose this round! ${computerSelection} beats ${playerSelection}`;
     gameUpdateDiv.appendChild(updatePlay) //update updatePlay text
     outcomeDiv.appendChild(p) //update p text
@@ -76,12 +76,12 @@ const checkForWinner = (playerScore, computerScore) => {
     if(playerScore === 5){
         const h2 = document.createElement('h2')
         h2.classList.add('player-won')
-        h2.innerText = `You won ${playerScore} to ${computerScore}, great job!`
+        h2.innerText =`You won ${playerScore} to ${computerScore}, great job!`
         outcomeDiv.appendChild(h2)
     } else if (computerScore === 5) {
         const h2 = document.createElement('h2')
         h2.classList.add('computer-won')
-        h2.innerText = `You lost ${playerScore} to ${computerScore}, try again!`
+        h2.innerText =`You lost ${playerScore} to ${computerScore}, try again!`
         outcomeDiv.appendChild(h2)
     }
 }
@@ -89,7 +89,7 @@ const checkForWinner = (playerScore, computerScore) => {
 //stop the game after 5 rounds functionality
 const stopGame = (playerScore, computerScore) => {
     if(playerScore === 5 || computerScore === 5) {
-        const h2 = document.createElement('h2')
+        const h2 = document.createElement('h3')
         h2.innerText = `you have played 5 rounds, restart the game`
         stopGameDiv.appendChild(h2)
         document.querySelector('.rock').disabled = true;
