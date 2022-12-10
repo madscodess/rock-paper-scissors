@@ -52,18 +52,22 @@ const checkForWinner = (playerScore, computerScore) => {
         const h2 = document.createElement('h2')
         h2.classList.add('player-won')
         h2.innerText = `You won ${playerScore} to ${computerScore}, great job!`
+        outcomeDiv.appendChild(h2)
     } else if (computerScore === 5) {
         const h2 = document.createElement('h2')
         h2.classList.add('computer-won')
-        h2.innerText = `You lost ${playerScore} to ${computerScore}, great job!`
+        h2.innerText = `You lost ${playerScore} to ${computerScore}, try again!`
+        outcomeDiv.appendChild(h2)
     }
 
 }
+
  //rock button functionality
 rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'rock'
     playRound(playerSelection, computerSelection)
+    checkForWinner(playerScore, computerScore)
 });
 
  //paper button functionality
@@ -71,6 +75,7 @@ rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'paper'
     playRound(playerSelection, computerSelection)
+    checkForWinner(playerScore, computerScore)
  });
 
  //scissors button functionality
@@ -78,6 +83,7 @@ rockButton.addEventListener('click', function() {
     const computerSelection = getComputerChoice(0, 2)
     const playerSelection = 'scissors'
     playRound(playerSelection, computerSelection)
+    checkForWinner(playerScore, computerScore)
 });
 
 // function game(){
