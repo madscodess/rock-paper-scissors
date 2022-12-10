@@ -1,9 +1,19 @@
+//TODO: 
+// functionality for rock paper scissors pictures on selection of button
+
+//FIXME: none yet
+//fix bug to make player restart the game after player or computer has won
+
+//TODO: ADDED FUNCTIONALITY - completed
+// restart game button
+
 let computerScore = 0;
 let playerScore = 0;
 
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
+const restartButton = document.querySelector('.restart');
 const outcomeDiv = document.querySelector('.outcome');
 
 const playerScoreSpan = document.querySelector('.player-score');
@@ -69,6 +79,12 @@ const checkForWinner = (playerScore, computerScore) => {
 const updateScores = (playerScore, computerScore) => {
     playerScoreSpan.innerText = `Player Score:   ${playerScore}`
     computerScoreSpan.innerText = `Computer Score:   ${computerScore}`
+}
+
+//restart game function
+function reloadGame() {
+    location.reload(); //reloads the page
+}
 
  //rock button functionality
 rockButton.addEventListener('click', function() {
@@ -96,6 +112,12 @@ rockButton.addEventListener('click', function() {
     updateScores(playerScore, computerScore)
     checkForWinner(playerScore, computerScore)
 });
+
+//restart game functionality
+restartButton.addEventListener('click', function() {
+    reloadGame();
+});
+
 
 // function game(){
     //play 5 rounds of the game 
