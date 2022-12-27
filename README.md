@@ -12,4 +12,4 @@ Created by Maddie
 # ADDITIONAL FUNCTIONALITY:
 - Added a function where the user can click 'restart game' and the page will refresh - restarting the game - (function is : reloadGame)
 - Added a function that means the player has to restart the game after 5 rounds, the cannot click any other button that 'restart game' - (function is : stopGame)
-- Added in pictures to correspond with the button that the user clicks 
+- Added in pictures to correspond with the button that the user clicks (rock, paper or scissors) 
